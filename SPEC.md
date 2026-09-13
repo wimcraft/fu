@@ -6,7 +6,7 @@
 
 **Problem:** The Bash `fu` viewer depends on ImageMagick and Chafa subprocesses. That creates a visible render delay, made background rendering unsafe because Chafa can probe or read the controlling terminal, and produced incorrect placement through indirect protocol rendering.
 
-**Goal:** Replace Bash `fu` with one Rust binary that displays one screenshot/document image in a Ghostty tmux pane, supports keyboard zoom and pan, and remains responsive during bursts of input.
+**Goal:** Provide one fast, keyboard-driven Rust image viewer for macOS terminals that composes cleanly with programs such as Newsboat, `lf`, and shell scripts while remaining responsive during navigation.
 
 **Non-goal:** Build a generic terminal image browser, a PDF reader, a GUI image viewer, or a multi-terminal graphics abstraction.
 

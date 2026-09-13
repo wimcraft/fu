@@ -1,8 +1,9 @@
 # fu
 
-Pan-and-zoom viewer for one screenshot/document image in a Ghostty tmux
-pane. Built for typing practice: keep a screenshot of text in one terminal
-split, your editor in the other, and press `space` to advance through it.
+Fast, keyboard-driven image viewer for macOS terminals. Inspired by
+[`sxiv`](https://github.com/xyb3rt/sxiv), `fu` opens one image with minimal UI
+and predictable keyboard controls. It is designed to compose with terminal
+programs such as Newsboat, file managers such as `lf`, and shell scripts.
 
 `fu` is a single Rust binary. It decodes and uploads the image once, then
 moves and scales one Kitty placement by source coordinates. Scrolling,
@@ -23,13 +24,29 @@ reprocessing or retransmitting image pixels.
 
 ## Install
 
-Install the latest version directly from GitHub:
+### Prebuilt binary
+
+Starting with the next tagged release, install the latest macOS binary with:
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/rfist/fu/main/install.sh | sh
+```
+
+The installer verifies the release checksum and writes to `~/.local/bin`.
+Override that location with `FU_INSTALL_DIR`:
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/rfist/fu/main/install.sh |
+  FU_INSTALL_DIR="$HOME/bin" sh
+```
+
+### Cargo
 
 ```sh
 cargo install --git https://github.com/rfist/fu
 ```
 
-Or build from a checkout:
+### From source
 
 ```sh
 git clone https://github.com/rfist/fu.git

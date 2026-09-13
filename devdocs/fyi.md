@@ -1,5 +1,12 @@
 # FYI
 
+## 2026-09-13 — Automate macOS releases and reposition as a composable viewer
+
+- **Product description:** removed the typing-practice framing. `fu` is a fast, keyboard-driven image viewer for macOS terminals, inspired by `sxiv` and intended to compose with Newsboat, `lf`, and shell scripts.
+- **Release workflow:** a `v*` tag now builds and tests native `aarch64-apple-darwin` and `x86_64-apple-darwin` binaries on GitHub-hosted Apple Silicon and Intel runners. Archives are checksummed and attached to a generated GitHub Release. Manual dispatch can publish an existing tag, but the already-pushed `v0.1.0` is intentionally left without retroactive assets; automation begins with the next tag.
+- **Installer:** `install.sh` detects Apple architecture, downloads the matching latest or requested release archive, verifies it against `SHA256SUMS`, and installs to `${FU_INSTALL_DIR:-$HOME/.local/bin}`. It fails closed for unsupported operating systems, architectures, missing checksums, and mismatches.
+- **Evidence:** release workflow YAML and installer shell syntax parse successfully; the exact Apple Silicon workflow test command passes all 73 tests; the release target builds as a Mach-O arm64 binary. A hermetic installer smoke test downloaded mocked release assets, verified the checksum, installed a byte-identical executable, and separately rejected a deliberately invalid checksum without installing.
+
 ## 2026-09-13 — Make navigation placement-only; add whole-image fit
 
 - **Performance problem:** every pan, page, and zoom created a new source crop, resized it to pane pixels, base64-encoded it, and transmitted a new Kitty image. Moving an already-decoded image therefore still waited on image processing and a pixel payload.

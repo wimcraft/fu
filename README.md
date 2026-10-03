@@ -29,27 +29,27 @@ reprocessing or retransmitting image pixels.
 Starting with the next tagged release, install the latest macOS binary with:
 
 ```sh
-curl -fsSL https://raw.githubusercontent.com/rfist/fu/main/install.sh | sh
+curl -fsSL https://raw.githubusercontent.com/wimcraft/fu/main/install.sh | sh
 ```
 
 The installer verifies the release checksum and writes to `~/.local/bin`.
 Override that location with `FU_INSTALL_DIR`:
 
 ```sh
-curl -fsSL https://raw.githubusercontent.com/rfist/fu/main/install.sh |
+curl -fsSL https://raw.githubusercontent.com/wimcraft/fu/main/install.sh |
   FU_INSTALL_DIR="$HOME/bin" sh
 ```
 
 ### Cargo
 
 ```sh
-cargo install --git https://github.com/rfist/fu
+cargo install --git https://github.com/wimcraft/fu
 ```
 
 ### From source
 
 ```sh
-git clone https://github.com/rfist/fu.git
+git clone https://github.com/wimcraft/fu.git
 cd fu
 cargo install --path .
 ```

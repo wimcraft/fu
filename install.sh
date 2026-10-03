@@ -1,7 +1,7 @@
 #!/bin/sh
 set -eu
 
-repo=${FU_REPO:-rfist/fu}
+repo=${FU_REPO:-wimcraft/fu}
 version=${FU_VERSION:-latest}
 install_dir=${FU_INSTALL_DIR:-"$HOME/.local/bin"}
 

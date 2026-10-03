@@ -5,7 +5,7 @@ edition = "2021"
 rust-version = "1.97.0"
 description = "Fast keyboard-driven image viewer for macOS terminals"
 license = "MIT"
-repository = "https://github.com/rfist/fu"
+repository = "https://github.com/wimcraft/fu"
 readme = "README.md"
 exclude = ["fu"]
 
